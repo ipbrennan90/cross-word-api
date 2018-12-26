@@ -1,1 +1,2 @@
 from controllers.board_controller import BoardController
+from controllers.puzzle_controller import PuzzleController

@@ -1,10 +1,12 @@
 from flask import Flask, request
 from database import db_session
-from controllers import BoardController
+from controllers import BoardController, PuzzleController
+from routes import Router
 from models import Puzzle
 from flask_json import FlaskJSON, json_response
 from flask_cors import CORS
 import json
+import pdb
 
 app = Flask(__name__)
 FlaskJSON(app)
@@ -28,9 +30,10 @@ def board():
 
 
 @app.route('/puzzles', methods=['GET'])
-def puzzles():
-    puzzles = Puzzle.findAll()
-    return json_response(data=puzzles)
+@app.route('/puzzles/<int:puzzle_id>', methods=['GET'])
+def puzzles(**params):
+  data = Router.direct(PuzzleController, request.method, params)
+  return json_response(data=data)
 
 
 @app.teardown_appcontext
