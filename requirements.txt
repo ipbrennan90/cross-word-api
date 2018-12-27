@@ -25,3 +25,4 @@ SQLAlchemy==1.2.14
 typed-ast==1.1.1
 Werkzeug==0.14.1
 wrapt==1.10.11
+xmlrunner==1.7.7

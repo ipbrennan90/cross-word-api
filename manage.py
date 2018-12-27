@@ -17,12 +17,11 @@ manager = Manager(app)
 
 @manager.command
 def test():
+    import xmlrunner
     """Runs the unit tests without test coverage."""
-    tests = unittest.TestLoader().discover('tests')
-    result = unittest.TextTestRunner(verbosity=2).run(tests)
-    if result.wasSuccessful():
-        return 0
-    return 1
+    tests = unittest.TestLoader().discover('src/tests')
+    xmlrunner.XMLTestRunner(output=os.environ.get(
+        'CIRCLE_TEST_REPORTS', 'test-reports')).run(tests)
 
 
 if __name__ == '__main__':
