@@ -3,11 +3,11 @@ import unittest
 import coverage
 
 from flask_script import Manager
-from app import app
+from src.app import app
 
 COV = coverage.coverage(
     branch=True,
-    include=['controllers/*', 'models/*']
+    include=['src/controllers/*', 'src/models/*']
 )
 
 COV.start()
@@ -18,7 +18,7 @@ manager = Manager(app)
 @manager.command
 def test():
     """Runs the unit tests without test coverage."""
-    tests = unittest.TestLoader().discover('./tests', pattern='test*.py')
+    tests = unittest.TestLoader().discover('src/tests', pattern='test*.py')
     result = unittest.TextTestRunner(verbosity=2).run(tests)
     if result.wasSuccessful():
         return 0

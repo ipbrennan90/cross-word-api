@@ -1,7 +1,6 @@
-from database import db_session
-from models import User
-from database import db_session
-from controllers.puzzle_controller import PuzzleController
+from src.database import db_session
+from src.models import User
+from src.controllers.puzzle_controller import PuzzleController
 
 
 class UserController():

@@ -1,5 +1,5 @@
-from database import db_session
-from models import Puzzle
+from src.database import db_session
+from src.models import Puzzle
 
 
 class PuzzleController():

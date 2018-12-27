@@ -1,8 +1,5 @@
-from database import db_session
-from models import Row
-from models import Board
-from models import Puzzle
-from database import db_session
+from src.models import Row, Board, Puzzle
+from src.database import db_session
 
 
 class BoardController():

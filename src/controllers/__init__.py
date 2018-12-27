@@ -1,0 +1,4 @@
+from src.controllers.board_controller import BoardController
+from src.controllers.puzzle_controller import PuzzleController
+from src.controllers.user_puzzle_controller import UserPuzzleController
+from src.controllers.user_controller import UserController

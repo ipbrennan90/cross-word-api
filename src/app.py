@@ -1,8 +1,8 @@
 from flask import Flask, request
-from database import db_session
-from controllers import BoardController, PuzzleController, UserController, UserPuzzleController
-from routes import Router
-from models import Puzzle
+from src.database import db_session
+from src.controllers import BoardController, PuzzleController, UserController, UserPuzzleController
+from src.routes import Router
+from src.models import Puzzle
 from flask_json import FlaskJSON, json_response
 from flask_cors import CORS
 import json
