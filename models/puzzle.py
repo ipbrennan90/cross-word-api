@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from database import Base, db_session
@@ -10,10 +10,10 @@ class Puzzle(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(120))
     board = relationship("Board", uselist=False, back_populates="puzzle")
+    user_id = Column(Integer, ForeignKey('users.id'))
+    user = relationship('User', back_populates='puzzles')
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
-
-    
 
     def __init__(self, name=None):
         self.name = name
