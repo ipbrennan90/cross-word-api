@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<testsuite errors="1" failures="0" name="unittest.loader._FailedTest-20181226215302" tests="1" time="0.000">
+	<testcase classname="unittest.loader._FailedTest" name="test" time="0.000">
+		<error message="Failed to import test module: test
+Traceback (most recent call last):
+  File &quot;/usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py&quot;, line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File &quot;/usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py&quot;, line 369, in _get_module_from_name
+    __import__(name)
+  File &quot;/Users/ianbrennan/playground/crossword-api/src/tests/test.py&quot;, line 1, in &lt;module&gt;
+    class ANonEmptyTest(TestCase):
+NameError: name 'TestCase' is not defined
+" type="ImportError">
+<![CDATA[ImportError: Failed to import test module: test
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/lib/python3.6/unittest/loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "/Users/ianbrennan/playground/crossword-api/src/tests/test.py", line 1, in <module>
+    class ANonEmptyTest(TestCase):
+NameError: name 'TestCase' is not defined
+
+]]>		</error>
+	</testcase>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>
